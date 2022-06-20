@@ -10,11 +10,12 @@ var Paths = {
   DIST: 'dist/',
   CSS: './assets/css/',
   SCSS_TOOLKIT_SOURCES: './assets/scss/soft-ui-dashboard.scss',
+  DARK_MODE_SOURCE: './assets/scss/dark-theme-core.scss',
   SCSS: './assets/scss/**/**'
 };
 
 gulp.task('compile-scss', function() {
-  return gulp.src(Paths.SCSS_TOOLKIT_SOURCES)
+  return gulp.src([Paths.SCSS_TOOLKIT_SOURCES, Paths.DARK_MODE_SOURCE])
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
     .pipe(autoprefixer())
