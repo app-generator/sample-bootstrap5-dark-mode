@@ -126,4 +126,8 @@ body.dark-page input.form-control:focus {
 body.dark-page .progress {
   background-color: rgba(39, 48, 71, 0.6705882353) !important;
 }
+body.dark-page .btn-outline-dark {
+  color: white;
+  border-color: white;
+}
 /*# sourceMappingURL=dark-theme-core.css.map */
