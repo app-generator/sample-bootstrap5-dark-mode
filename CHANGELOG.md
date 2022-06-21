@@ -1,5 +1,10 @@
 # Change Log
 
+## [1.0.6-enh1] 2022-06-21
+### Improvements
+
+- Added `dark-mode` (custom enhancement)
+
 ## [1.0.6] 2022-06-03
 ### Updates and Improvements
 - update Bootstrap to v5.2.0-beta1
