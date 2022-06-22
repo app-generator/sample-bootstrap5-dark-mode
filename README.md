@@ -4,7 +4,7 @@ Soft UI Dashboard is built with over 70 frontend individual elements, like butto
 
 <br />
 
-> **Enhanced version** of the [original version](https://www.creative-tim.com/product/soft-ui-dashboard?AFFILIATE=128200) with `Dark Mode` - persistence via browser local storage. 
+> **Enhanced version** of the [original version](https://www.creative-tim.com/product/soft-ui-dashboard?AFFILIATE=128200) with `Dark Mode` - [LIVE Demo](https://django-soft-ui-dashboard.appseed-srv1.com/)
 
 - 👉 [Soft UI Dashboard](https://appseed.us/product/soft-ui-dashboard/django/) `Dark Support` - **Django Version** (free product)
 - 👉 [Soft UI Dashboard](https://appseed.us/product/soft-ui-dashboard/flask/) `Dark Support` - **Flask Version** (free product)
