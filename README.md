@@ -16,7 +16,7 @@ Soft UI Dashboard is built with over 70 frontend individual elements, like butto
 
 <br />
 
-## How it works
+## 👉 How it works
 
 This enhacement was made by coding the following steps: 
 
@@ -30,7 +30,9 @@ The new files (`dark-mode-handler.js` and `dark-theme-core.css`) are included in
 
 On top of this, the `dark mode` is provided to be persistent and the current state of the theme (`dark` or `light`) is saved in the local storage on the browser. 
 
-### JS Code
+<br />
+
+### 👉 JS Code
 
 Once the `dark theme` control is saved in the navigation bar, a simple event listener is attached that handles the user interation. 
 
@@ -97,7 +99,7 @@ themeSwitch.addEventListener('change', function () {
 
 <br />
 
-### Dark Mode CSS File
+### 👉 `Dark Mode` CSS File
 
 Keep in in mind the rules of specificity [read more about it](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) we start our SCSS file with the dark theme class selector for body tag. We will write all our code inside this code block. The css rules are pretty straightforward. 
 
@@ -108,6 +110,8 @@ In our main code block, we targetted our “dark-page” class and all elements 
 
 In the dark mode, we are not overwriting every bit of the page. The accent colors will remain the same. For example, buttons, alerts, badges, icons, etc.
 The things we need to take care of includes, background for body, cards, card headers, list items, navigation buttons, input elements, svg icons, fontawesome icons, switches, and tables.
+
+<br />
 
 ---
 Soft UI Dashboard `Dark Mode` Support - Open-source sample provided by **[AppSeed](https://appseed.us/generator)**.  
