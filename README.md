@@ -1,165 +1,111 @@
-# [Soft UI Dashboard](https://appseed.us/product/soft-ui-dashboard/)
-
-![Soft UI Dashboard - dark Mode Enhancement](https://user-images.githubusercontent.com/51070104/174716339-53c95c87-3842-4878-aef8-a675b0eca5b1.gif) 
-
-Most complex and innovative Dashboard Made by [Creative Tim](https://creative-tim.com/). Check our latest Free Bootstrap 5 Dashboard.
-
-Designed for those who like bold elements and beautiful websites. Made of hundred of elements, designed blocks and fully coded pages, Soft UI Dashboard is ready to help you create stunning websites and webapps.
-
-We created many examples for pages like Sign In, Profile and so on. Just choose between a Basic Design, an illustration or a cover and you are good to go!
-
-**Fully Coded Elements**
+# Soft UI Dashboard - `Dark Mode` Support
 
 Soft UI Dashboard is built with over 70 frontend individual elements, like buttons, inputs, navbars, navtabs, cards or alerts, giving you the freedom of choosing and combining. All components can take variations in colour, that you can easily modify using SASS files and classes.
 
-You will save a lot of time going from prototyping to full-functional code, because all elements are implemented.
-This Free Bootstrap 5 Dashboard is coming with prebuilt design blocks, so the development process is seamless,
-switching from our pages to the real website is very easy to be done.
+> **Enhanced version** of the [original version](https://www.creative-tim.com/product/soft-ui-dashboard?AFFILIATE=128200) with `Dark Mode` - persistence via browser local storage. 
 
-View [all components here](https://www.creative-tim.com/learning-lab/bootstrap/alerts/soft-ui-dashboard?ref=readme-sud).
+- 👉 [Soft UI Dashboard](https://appseed.us/product/soft-ui-dashboard/django/) `Dark Support` - **Django Version** (free product)
+- 👉 [Soft UI Dashboard](https://appseed.us/product/soft-ui-dashboard/flask/) `Dark Support` - **Flask Version** (free product)
+- 🚀 [Soft Dashboard Generator](https://appseed.us/generator/soft-ui-dashboard/) - LIVE & Free Service
 
-**Documentation built by Developers**
+<br />
 
-Each element is well presented in a very complex documentation.
-You can read more about the <a href="https://www.creative-tim.com/learning-lab/bootstrap/overview/soft-ui-dashboard" target="_blank">documentation here</a>.
+![Soft UI Dashboard - dark Mode Enhancement](https://user-images.githubusercontent.com/51070104/174716339-53c95c87-3842-4878-aef8-a675b0eca5b1.gif) 
 
-**Example Pages**
+<br />
 
-If you want to get inspiration or just show something directly to your clients,
-you can jump start your development with our pre-built example pages. You will be able
-to quickly set up the basic structure for your web project.
-View <a href="https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html" target="_blank">example pages here</a>.
+## How it works
 
-**HELPFUL LINKS**
+This enhacement was made by coding the following steps: 
 
-- View <a href="https://github.com/creativetimofficial/soft-ui-dashboard" target="_blank">Github Repository</a>
+- Create a new `JS` file that handles the user interactions
+  - Source code: [dark-mode-handler.js](https://github.com/app-generator/sample-bootstrap5-dark-mode/blob/main/assets/js/dark-mode-handler.js)
+- CSS/SCSS files for the style changes
+  - Sources: [CSS](https://github.com/app-generator/sample-bootstrap5-dark-mode/blob/main/assets/css/dark-theme-core.css) and [SCSS](https://github.com/app-generator/sample-bootstrap5-dark-mode/blob/main/assets/scss/dark-theme-core.scss)
+- Gulp scripts update to handle the new SCSS file
 
-- Check <a href="https://www.creative-tim.com/faq" target="_blank">FAQ Page</a>
+The new files (`dark-mode-handler.js` and `dark-theme-core.css`) are included in the pages. The CSS file gows to the `header` and the `JS` goes at the bottom, just before closing `</body>`.
 
-#### Special thanks
-During the development of this dashboard, we have used many existing resources from awesome developers. We want to thank them for providing their tools open source:
-- [Bootstrap 5](https://www.getbootstrap.com)- Open source front end framework
-- [Popper.js](https://popper.js.org/) - Kickass library used to manage poppers
+On top of this, the `dark mode` is provided to be persistent and the current state of the theme (`dark` or `light`) is saved in the local storage on the browser. 
 
-Let us know your thoughts below. And good luck with development!
+### JS Code
 
-## Table of Contents
+Once the `dark theme` control is saved in the navigation bar, a simple event listener is attached that handles the user interation. 
 
-* [Versions](#versions)
-* [Demo](#demo)
-* [Quick Start](#quick-start)
-* [Documentation](#documentation)
-* [File Structure](#file-structure)
-* [Browser Support](#browser-support)
-* [Resources](#resources)
-* [Reporting Issues](#reporting-issues)
-* [Technical Support or Questions](#technical-support-or-questions)
-* [Licensing](#licensing)
-* [Useful Links](#useful-links)
+```javascript
+const themeSwitch = document.getElementById("theme-switch");
+const themeIndicator = document.getElementById("theme-indicator");
+const page = document.body;
 
-## Versions
+const themeStates = ["light", "dark"]               // here we manage the states
+const indicators = ["fa-moon", "fa-sun"]            // here is managed the icon 
+const pageClass = ["bg-gray-100", "dark-page"]      // CSS class, where `bg-gray-100` was the original, light theme 
 
-[<img src="https://s3.amazonaws.com/creativetim_bucket/github/html.png" width="60" height="60" />](https://www.creative-tim.com/product/soft-ui-dashboard?ref=readme-sud)
+let currentTheme = localStorage.getItem("theme");   // Use the browser localStorage for persistence 
 
-| HTML |
-| --- |
-| [![Soft UI Dashboard HTML](https://s3.amazonaws.com/creativetim_bucket/products/450/thumb/opt_sd_free_thumbnail.jpg?1617715816)](http://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html?ref=readme-sud)
+function setTheme(theme) {
+    localStorage.setItem("theme", themeStates[theme])
+}
 
-## Demo
+function setIndicator(theme) {
+    themeIndicator.classList.remove(indicators[0])
+    themeIndicator.classList.remove(indicators[1])
+    themeIndicator.classList.add(indicators[theme])
+}
 
-- [Profile page](http://demos.creative-tim.com/soft-ui-dashboard/pages/profile.html?ref=readme-sud)
-- [Sign in page](http://demos.creative-tim.com/soft-ui-dashboard/pages/sign-in.html?ref=readme-sud)
-- [Sign up page](https://demos.creative-tim.com/soft-ui-dashboard/pages/sign-up.html?ref=readme-sud)
+function setPage(theme) {
+    page.classList.remove(pageClass[0])
+    page.classList.remove(pageClass[1])
+    page.classList.add(pageClass[theme])
+}
 
-[View More](https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html?ref=readme-sud).
 
-## Quick start
+if (currentTheme === null) {
+    localStorage.setItem("theme", themeStates[0])
+    setIndicator(0)
+    setPage(0)
+    themeSwitch.checked = true;
+}
+if (currentTheme === themeStates[0]) {
+    setIndicator(0)
+    setPage(0)
+    themeSwitch.checked = true;
 
-Quick start options:
+}
+if (currentTheme === themeStates[1]) {
+    setIndicator(1)
+    setPage(1)
+    themeSwitch.checked = false;
+}
 
-- Download from [Creative Tim](https://www.creative-tim.com/product/soft-ui-dashboard?ref=readme-sud).
 
-## Terminal Commands
-
-1. Download and Install NodeJs from [NodeJs Official Page](https://nodejs.org/en/download/).
-2. Navigate to the root / directory and run npm install to install our local dependencies.
-
-## Documentation
-The documentation for the Soft UI Dashboard is hosted at our [website](https://www.creative-tim.com/learning-lab/bootstrap/overview/soft-ui-dashboard?ref=readme-sud).
-
-### What's included
-
-Within the download you'll find the following directories and files:
+themeSwitch.addEventListener('change', function () {
+    if (this.checked) {
+        setTheme(0)
+        setIndicator(0)
+        setPage(0)
+    } else {
+        setTheme(1)
+        setIndicator(1)
+        setPage(1)
+    }
+});
 
 ```
-soft-ui-dashboard
-    ├── assets
-    │   ├── css
-    │   ├── fonts
-    │   ├── img
-    │   ├── js
-    │   │   ├── core
-    │   │   ├── plugins
-    │   │   └── soft-ui-dashboard.js
-    │   │   └── soft-ui-dashboard.js.map
-    │   │   └── soft-ui-dashboard.min.js
-    │   └── scss
-    │       ├── soft-ui-dashboard
-    │       └── soft-ui-dashboard.scss
-    ├── docs
-    │   ├── documentation.html
-    ├── pages
-    ├── CHANGELOG.md
-    ├── gulpfile.js
-    ├── package.json
-```
 
-## Browser Support
+<br />
 
-At present, we officially aim to support the last two versions of the following browsers:
+### Dark Mode CSS File
 
-<img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/chrome.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/firefox.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/edge.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/safari.png" width="64" height="64"> <img src="https://s3.amazonaws.com/creativetim_bucket/github/browser/opera.png" width="64" height="64">
+Keep in in mind the rules of specificity [read more about it](https://developer.mozilla.org/en-US/docs/Web/CSS/Specificity) we start our SCSS file with the dark theme class selector for body tag. We will write all our code inside this code block. The css rules are pretty straightforward. 
 
-## Resources
-- [Live Preview](https://demos.creative-tim.com/soft-ui-dashboard/pages/dashboard.html?ref=readme-sud)
-- [Download Page](https://www.creative-tim.com/product/soft-ui-dashboard?ref=readme-sud)
-- Documentation is [here](https://www.creative-tim.com/learning-lab/bootstrap/overview/soft-ui-dashboard?ref=readme-sud)
-- [License Agreement](https://www.creative-tim.com/license?ref=readme-sud)
-- [Support](https://www.creative-tim.com/contact-us?ref=readme-sud)
-- Issues: [Github Issues Page](https://github.com/creativetimofficial/soft-ui-dashboard/issues)
+The main thing to understand here is, when the dark mode is toggled, our body element gets a class of `dark-page` otherwise, it has the default class of “bg-gray-100”
+In our main code block, we targetted our “dark-page” class and all elements are inside this body class, thus we can easily write new styles for this.
 
-## Reporting Issues
-We use GitHub Issues as the official bug tracker for the Soft UI Dashboard. Here are some advices for our users that want to report an issue:
+> Tips To Easily Change Dark Mode Colors
 
-1. Make sure that you are using the latest version of the Soft UI Dashboard. Check the CHANGELOG from your dashboard on our [website](https://www.creative-tim.com/product/soft-ui-dashboard?ref=readme-sud).
-2. Providing us reproducible steps for the issue will shorten the time it takes for it to be fixed.
-3. Some issues may be browser specific, so specifying in what browser you encountered the issue might help.
+In the dark mode, we are not overwriting every bit of the page. The accent colors will remain the same. For example, buttons, alerts, badges, icons, etc.
+The things we need to take care of includes, background for body, cards, card headers, list items, navigation buttons, input elements, svg icons, fontawesome icons, switches, and tables.
 
-## Technical Support or Questions
-
-If you have questions or need help integrating the product please [contact us](https://www.creative-tim.com/contact-us?ref=readme-sud) instead of opening an issue.
-
-## Licensing
-
-- Copyright 2022 [Creative Tim](https://www.creative-tim.com?ref=readme-sud)
-- Creative Tim [license](https://www.creative-tim.com/license?ref=readme-sud)
-
-## Useful Links
-
-- [More products](https://www.creative-tim.com/templates?ref=readme-sud) from Creative Tim
-
-- [Tutorials](https://www.youtube.com/channel/UCVyTG4sCw-rOvB9oHkzZD1w)
-
-- [Freebies](https://www.creative-tim.com/bootstrap-themes/free?ref=readme-sud) from Creative Tim
-
-- [Affiliate Program](https://www.creative-tim.com/affiliates/new?ref=readme-sud) (earn money)
-
-##### Social Media
-
-Twitter: <https://twitter.com/CreativeTim>
-
-Facebook: <https://www.facebook.com/CreativeTim>
-
-Dribbble: <https://dribbble.com/creativetim>
-
-Instagram: <https://instagram.com/creativetimofficial>
+---
+Soft UI Dashboard `Dark Mode` Support - Open-source sample provided by **[AppSeed](https://appseed.us/generator)**.  
