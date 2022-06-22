@@ -2,6 +2,8 @@
 
 Soft UI Dashboard is built with over 70 frontend individual elements, like buttons, inputs, navbars, navtabs, cards or alerts, giving you the freedom of choosing and combining. All components can take variations in colour, that you can easily modify using SASS files and classes.
 
+<br />
+
 > **Enhanced version** of the [original version](https://www.creative-tim.com/product/soft-ui-dashboard?AFFILIATE=128200) with `Dark Mode` - persistence via browser local storage. 
 
 - 👉 [Soft UI Dashboard](https://appseed.us/product/soft-ui-dashboard/django/) `Dark Support` - **Django Version** (free product)
