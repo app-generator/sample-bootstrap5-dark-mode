@@ -34,7 +34,7 @@ On top of this, the `dark mode` is provided to be persistent and the current sta
 
 ### 👉 JS Code
 
-Once the `dark theme` control is saved in the navigation bar, a simple event listener is attached that handles the user interation. 
+Once the `dark theme` control is saved in the navigation bar, and a simple event listener is attached that handles the user interaction.
 
 ```javascript
 const themeSwitch = document.getElementById("theme-switch");
