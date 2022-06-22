@@ -18,7 +18,7 @@ Soft UI Dashboard is built with over 70 frontend individual elements, like butto
 
 ## 👉 How it works
 
-This enhacement was made by coding the following steps: 
+This enhancement was made by coding the following steps: 
 
 - Create a new `JS` file that handles the user interactions
   - Source code: [dark-mode-handler.js](https://github.com/app-generator/sample-bootstrap5-dark-mode/blob/main/assets/js/dark-mode-handler.js)
@@ -26,7 +26,7 @@ This enhacement was made by coding the following steps:
   - Sources: [CSS](https://github.com/app-generator/sample-bootstrap5-dark-mode/blob/main/assets/css/dark-theme-core.css) and [SCSS](https://github.com/app-generator/sample-bootstrap5-dark-mode/blob/main/assets/scss/dark-theme-core.scss)
 - Gulp scripts update to handle the new SCSS file
 
-The new files (`dark-mode-handler.js` and `dark-theme-core.css`) are included in the pages. The CSS file gows to the `header` and the `JS` goes at the bottom, just before closing `</body>`.
+The new files (`dark-mode-handler.js` and `dark-theme-core.css`) are included in the pages. The CSS file goes to the `header` and the `JS` goes at the bottom, just before closing `</body>`.
 
 On top of this, the `dark mode` is provided to be persistent and the current state of the theme (`dark` or `light`) is saved in the local storage on the browser. 
 
